@@ -20,8 +20,7 @@
 
 title: arbestor's cave
 email: info@arbestor.xyz
-description: >- # this means to ignore newlines until "baseurl:"
-  look
+description: pay attention
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arbestor
