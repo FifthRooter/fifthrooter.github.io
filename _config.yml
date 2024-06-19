@@ -21,14 +21,14 @@
 title: arbestor's cave
 email: info@arbestor.xyz
 description: >- # this means to ignore newlines until "baseurl:"
-  Old projects, new projects, old ideas, new ideas.
+  look
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arbestor
 github_username:  FifthRooter
 
 # Build settings
-remote_theme: lightspeed 
+theme: minima
 plugins:
   - jekyll-feed
 
