@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "death is optional"
 date:   2024-06-20 00:00:12 +0300
 categories: jekyll update
 ---
