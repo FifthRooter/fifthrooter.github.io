@@ -21,7 +21,7 @@
 title: arbestor's cave
 email: info@arbestor.xyz
 description: pay attention
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: https://fifthrooter.github.io/
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arbestor
 github_username:  FifthRooter
@@ -30,6 +30,12 @@ github_username:  FifthRooter
 theme: minima
 plugins:
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

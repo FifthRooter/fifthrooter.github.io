@@ -4,19 +4,23 @@ title: super-coiled actuator
 permalink: /twisted-coils/
 ---
 
-A super-coiled polymer (SCP) actuator is an alluring idea. Instead of having a simple string being pulled by an electric motor, why not embed the actuation mechanism in the material itself? Just like animal muscles.  
+A super-coiled polymer (cxSPA) actuator is an alluring idea. Instead of having a simple string being pulled by an electric motor, why not embed the actuation mechanism in the material itself? Just like animal muscles.
 
-### Making coaxial super-coiled polymer actuator (CoSPA) cheap and accessible
-Of course, with almost no budget, I wouldn't get far without thinking of how I could repurpose something affordable and accessible for a regular hacker on a budget. After all, these Coaxial Super-coiled Polymer Actuators (CoSPA) should be possible to make in a home lab setting. 
+### Making coaxial super-coiled polymer actuator (cxSPA) cheap and accessible
+
+Of course, with almost no budget, I wouldn't get far without thinking of how I could repurpose something affordable and accessible for a regular hacker on a budget. After all, these Coaxial Super-coiled Polymer Actuators (CoSPA) should be possible to make in a home lab setting.
 
 ### Rough Plan
-I plan on tweaking a 3D printer extruder a little bit by inserting a tiny syringe needle (or some centering mechanism) in the center of an extruder nozzle and feed a nichrome wire through it, with melted nylon flowing/extruding from around it throught the nozzle, pulling the wire with it and embedding it in the core of the newly extruded nylon fiber. 
+
+I plan on tweaking a 3D printer extruder a little bit by inserting a tiny syringe needle (or some centering mechanism) in the center of an extruder nozzle and feed a nichrome wire through it, with melted nylon flowing/extruding from around it throught the nozzle, pulling the wire with it and embedding it in the core of the newly extruded nylon fiber.
 
 ### Mechanical/thermal property implications of remelting and drawing of nylon fiber
 
 ### Twisting setup
-{% include youtube.html id="FogEhFSXHNA" %}
-[Nylon-based twisted coil actuator twisting setup - Youtube](https://www.youtube.com/watch?v=FogEhFSXHNA)
+
+{% include youtube.html id="4HUenCeSx1Q" %}
+{% include youtube.html id="D6WQnWQOB_M" %}
+
 ![DSC08511](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/bb9535bf-276e-44a7-81a8-9f0d9c850ccd)
 ![DSC08504](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/a37ead29-0f2c-47ba-940b-73dd330d44b6)
 ![DSC08500](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/a71e67f6-4888-4a11-bbd7-43ac113819d3)
@@ -27,6 +31,7 @@ I plan on tweaking a 3D printer extruder a little bit by inserting a tiny syring
 ![DSC08481](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/bf7bae39-d75b-4042-8cd2-215e8481a71a)
 
 ### Tests
+
 ![IMG_20190322_100229](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/2055e96e-a174-4929-a4ba-aa5712870d21)
 ![IMG_20190318_193056](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/1dc8a144-45af-448d-8566-147083f81db2)
 ![IMG_20190318_193032](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/5b03aefd-27bd-430a-875e-99d71c8675b9)
@@ -43,5 +48,3 @@ I plan on tweaking a 3D printer extruder a little bit by inserting a tiny syring
 ![VID_6](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/4da2715e-edb3-4c72-9eb5-accba51a6940)
 
 ![VID_7](https://github.com/FifthRooter/twisted-coil-actuators/assets/22204845/92eececb-7e52-46c5-b986-2a805c1f9758)
-
-
