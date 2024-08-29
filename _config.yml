@@ -21,8 +21,8 @@
 title: arbestor's cave
 email: info@arbestor.xyz
 description: pay attention
-baseurl: https://fifthrooter.github.io/
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: /fifthrooter.github.io
+url: http://fifthrooter.github.io # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arbestor
 github_username:  FifthRooter
 
