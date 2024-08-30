@@ -26,7 +26,7 @@ I love old vintage city/road/race bikes, and luckily, living in Europe, I have a
 
 <div class="image-grid">
   {% for file in site.static_files %}
-    {% if file.path contains 'assets/img/bikes/red_peugeot/' and file.extname == '.jpg' %}
+    {% if file.path contains 'assets/img/bikes/red_peugeot/' and file.extname == '.webp' %}
       <a href="{{ file.path }}"><img src="{{ file.path }}" alt="{{ file.name }}"></a>
     {% endif %}
   {% endfor %}
