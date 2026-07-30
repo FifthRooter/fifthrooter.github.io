@@ -40,29 +40,29 @@ I plan on tweaking a 3D printer extruder a little bit by inserting a tiny syring
 ![IMG_20190318_172618](./images/IMG_20190318_172618.webp)
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_1.mp4" type="video/mp4" />
+  <source src="/videos/VID_1.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_2.mp4" type="video/mp4" />
+  <source src="/videos/VID_2.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_3.mp4" type="video/mp4" />
+  <source src="/videos/VID_3.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_4.mp4" type="video/mp4" />
+  <source src="/videos/VID_4.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_5.mp4" type="video/mp4" />
+  <source src="/videos/VID_5.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_6.mp4" type="video/mp4" />
+  <source src="/videos/VID_6.mp4" type="video/mp4" />
 </video>
 
 <video controls preload="metadata" class="my-4 w-full max-w-3xl">
-  <source src="./images/VID_7.mp4" type="video/mp4" />
+  <source src="/videos/VID_7.mp4" type="video/mp4" />
 </video>
