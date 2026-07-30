@@ -1,0 +1,208 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  folder: string;
+  base?: string;
+  alt?: string;
+}
+
+const { folder, base = "/src/assets/bikes", alt = "" } = Astro.props;
+
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/bikes/**/*.webp",
+  { eager: true }
+);
+
+const images = Object.entries(modules)
+  .filter(([path]) => path.includes(`/${folder}/`))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, mod]) => ({ path, ...mod }));
+---
+
+{
+  images.length === 0 ? (
+    <p class="italic opacity-70">No images in this folder yet.</p>
+  ) : (
+    <ul class="gallery-grid not-prose list-none p-0">
+      {images.map((img, i) => (
+        <li>
+          <a href={img.default.src} data-gallery-index={i}>
+            <Image
+              src={img.default}
+              alt={alt}
+              widths={[240, 480, 720]}
+              sizes="(min-width: 768px) 240px, 50vw"
+              loading="lazy"
+              decoding="async"
+              format="webp"
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<dialog
+  id="gallery-modal"
+  class="gallery-modal"
+  aria-label="Image viewer"
+>
+  <button
+    type="button"
+    class="gallery-modal-close"
+    aria-label="Close"
+    data-close
+  >
+    ×
+  </button>
+  <img id="gallery-modal-img" alt="" />
+  <button
+    type="button"
+    class="gallery-modal-prev"
+    aria-label="Previous image"
+    data-prev
+  >
+    ‹
+  </button>
+  <button
+    type="button"
+    class="gallery-modal-next"
+    aria-label="Next image"
+    data-next
+  >
+    ›
+  </button>
+</dialog>
+
+<script define:vars={{ imageSrcs: images.map((i) => i.default.src) }}>
+  (() => {
+    const modal = document.getElementById("gallery-modal");
+    const modalImg = document.getElementById("gallery-modal-img");
+    if (!modal || !modalImg) return;
+
+    let currentIndex = 0;
+    const srcs = imageSrcs;
+
+    const open = (i) => {
+      currentIndex = i;
+      modalImg.src = srcs[i];
+      modalImg.alt = `Image ${i + 1} of ${srcs.length}`;
+      if (typeof modal.showModal === "function") modal.showModal();
+      else modal.setAttribute("open", "");
+    };
+    const close = () => {
+      if (typeof modal.close === "function") modal.close();
+      else modal.removeAttribute("open");
+    };
+    const next = () => {
+      currentIndex = (currentIndex + 1) % srcs.length;
+      modalImg.src = srcs[currentIndex];
+    };
+    const prev = () => {
+      currentIndex = (currentIndex - 1 + srcs.length) % srcs.length;
+      modalImg.src = srcs[currentIndex];
+    };
+
+    document.querySelectorAll("[data-gallery-index]").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        open(Number(a.getAttribute("data-gallery-index")));
+      });
+    });
+
+    modal.querySelector("[data-close]")?.addEventListener("click", close);
+    modal.querySelector("[data-next]")?.addEventListener("click", next);
+    modal.querySelector("[data-prev]")?.addEventListener("click", prev);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!modal.hasAttribute("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    });
+  })();
+</script>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  .gallery-grid li {
+    margin: 0;
+  }
+  .gallery-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 0.25rem;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform 200ms ease;
+  }
+  .gallery-grid a:hover img {
+    transform: scale(1.03);
+  }
+
+  .gallery-modal {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  }
+  .gallery-modal::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .gallery-modal img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+  }
+  .gallery-modal-close,
+  .gallery-modal-prev,
+  .gallery-modal-next {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 0;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    z-index: 10;
+  }
+  .gallery-modal-close {
+    top: 1rem;
+    right: 1rem;
+  }
+  .gallery-modal-prev {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .gallery-modal-next {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .gallery-modal-close:hover,
+  .gallery-modal-prev:hover,
+  .gallery-modal-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+</style>
