@@ -1,7 +1,7 @@
 ---
 title: "death is optional"
 description: "On longevity, immortality, and the ethics of opt-in death."
-date: 2024-06-19
+date: 2021-06-19
 tags:
   - random
 ---
