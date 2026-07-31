@@ -1,6 +1,6 @@
 ---
 import Container from "@components/Container.astro";
-import { SITE } from "@consts";
+import Link from "@components/Link.astro";
 import BackToTop from "@components/BackToTop.astro";
 ---
 
@@ -12,7 +12,15 @@ import BackToTop from "@components/BackToTop.astro";
       </div>
     </div>
     <div class="flex items-center justify-between">
-      <div>&copy; {new Date().getFullYear()} • {SITE.TITLE}</div>
+      <div>
+        &copy; {new Date().getFullYear()} &bull;&nbsp;<Link
+          href="https://github.com/FifthRooter"
+          external
+          aria-label="Toms Bernhards on GitHub"
+        >
+          Toms Bernhards
+        </Link>
+      </div>
       <div class="flex flex-wrap items-center gap-1.5">
         <button
           id="light-theme-button"
