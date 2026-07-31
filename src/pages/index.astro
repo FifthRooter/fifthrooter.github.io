@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
@@ -27,28 +27,10 @@ const projects: CollectionEntry<"projects">[] = (
         {SITE.TITLE}
       </h1>
       <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span>
-              <p>
-                I'm on a mission to learn as many practical skills as I can, and hopefully
-                invent something on the way. A lifelong dilettante, and proud of it.
-              </p>
-              <p>
-                Here you'll find notes on whatever I'm tinkering with —
-                <Link href="/blog">posts</Link>,
-                <Link href="/projects">projects</Link>,
-                <Link href="/bikes">vintage bikes</Link>, and the occasional
-                <Link href="/now">now</Link> update.
-              </p>
-            </span>
-          </article>
-        </section>
-
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
+              Blog posts
             </h2>
             <Link href="/blog"> See all posts </Link>
           </div>
@@ -70,7 +52,7 @@ const projects: CollectionEntry<"projects">[] = (
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
+              Projects
             </h2>
             <Link href="/projects"> See all projects </Link>
           </div>
@@ -87,42 +69,6 @@ const projects: CollectionEntry<"projects">[] = (
               <p class="opacity-70 italic">No projects yet.</p>
             )
           }
-        </section>
-
-        <section class="animate space-y-4">
-          <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
-          </h2>
-          <article>
-            <p>
-              If you want to get in touch with me about something or just to say
-              hi, reach out on social media or send me an email.
-            </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            {
-              SOCIALS.map((SOCIAL) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  <Link
-                    href={SOCIAL.HREF}
-                    external
-                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                  >
-                    {SOCIAL.NAME}
-                  </Link>
-                  {"/"}
-                </li>
-              ))
-            }
-            <li class="line-clamp-1">
-              <Link
-                href={`mailto:${SITE.EMAIL}`}
-                aria-label={`Email ${SITE.TITLE}`}
-              >
-                {SITE.EMAIL}
-              </Link>
-            </li>
-          </ul>
         </section>
       </div>
     </aside>

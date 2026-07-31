@@ -3,11 +3,10 @@ import { Image } from "astro:assets";
 
 interface Props {
   folder: string;
-  base?: string;
   alt?: string;
 }
 
-const { folder, base = "/src/assets/bikes", alt = "" } = Astro.props;
+const { folder, alt = "" } = Astro.props;
 
 const modules = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/bikes/**/*.webp",
