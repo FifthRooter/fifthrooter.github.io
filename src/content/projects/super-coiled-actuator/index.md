@@ -2,6 +2,7 @@
 title: super-coiled actuator
 description: Coaxial super-coiled polymer actuators (cxSPA) — embed the actuation in the material itself.
 date: 2024-06-19
+hidePreview: true
 ---
 
 import YouTubeEmbed from "../../../components/YouTubeEmbed.astro";
